@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <title>Lynch Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="../static/css/tabs.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/players.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/details.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/chat.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/user.css" type="text/css" />
+    <link rel="stylesheet" href="../static/css/thoughts.css" type="text/css" />
+        <!-- Pure -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
+    <!-- Scripts -->
+    <script type="text/javascript" src="../static/js/chat.js"></script>
+    <script type="text/javascript" src="../static/js/details.js"></script>
+    <script type="text/javascript" src="../static/js/user.js"></script>
+    <script type="text/javascript" src="../static/js/players.js"></script>
+    <script type="text/javascript" src="../static/js/main.js"></script>
+</head>
+<body onload="initAll()">
+
+<div class="pure-g" id="tab-bar">
+    <div class="pure-u-1-6">
+        <button class="pure-button">Vote Stats</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Stories</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Townhall</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Mafia</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Masons</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Log Out</button>
+    </div>
+</div>
+
+<div class="pure-g" id="player-list">
+    <div class="pure-u-1-6">
+        <div>
+            <!-- Lists Players -->
+            <button onclick="showSlideout()">Show Slideout</button>
+        </div>
+    </div>
+</div>
+
+<div id="person-slideout">
+    <div id="votes">
+        <!-- Display all lynch votes, and election votes against / for this person -->
+    </div>
+    <div id="them-thoughts">
+        <!-- Display people's public thoughts about this person. -->
+    </div>
+    <div id="chat">
+        <!-- PM this person -->
+    </div>
+</div>
+
+<div id="user">
+    <div id="role">
+        <span>Your Role</span>
+        <span>-Role-</span>
+        <!-- Section explaining your role this round -->
+    </div>
+    <div id="you-thoughts">
+        <!-- People's public thoughts about the user -->
+        <span>People's Thoughts on You</span>
+        <div class="thought">
+            <span>Evy</span>
+            <p>Uber sketchy</p>
+        </div>
+        <div class="thought">
+            <span>Keegan</span>
+            <p>Super sketchy</p>
+        </div>
+    </div>
+    <div id="private-thoughts">
+        <!-- User's private thoughts -->
+        <span>Scratch Pad</span>
+        <textarea></textarea>
+    </div>
+</div>
+
+<div id="chats">
+    <!-- Displays the chats from the game. -->
+</div>
+
+</body>
+</html>

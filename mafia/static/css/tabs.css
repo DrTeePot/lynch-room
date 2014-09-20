@@ -1,0 +1,19 @@
+/* Chat Tabs */
+#tab-bar
+{
+    position: fixed;
+        top: 0px;
+        left: 0p;
+        z-index: 1;
+    display: block;
+        width: 100%;
+        height: 50px;
+    background-color: black;
+    color: white;
+}
+
+#tab-bar > div
+{
+    text-align: center;
+    font-size: 23.5px;
+}
