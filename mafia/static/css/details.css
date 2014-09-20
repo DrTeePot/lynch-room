@@ -1,0 +1,12 @@
+#person-slideout
+{
+    position: fixed;
+        top: 50px;
+        left: 0px;
+        z-index: 1;
+    display: block;
+        width: 250px;
+    background-color: silver;
+    transform-style: flat;
+    transition: left 0.5s;
+}

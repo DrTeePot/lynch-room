@@ -1,0 +1,26 @@
+#user
+{
+    position: fixed;
+        top: 50px;
+        right: 0px;
+        z-index: 1;
+    display: block;
+        width: 250px;
+    background-color: lightgrey;
+}
+
+/* Scratch Pad */
+#user > div:last-of-type
+{
+    position: absolute;
+        bottom: 2.5px;
+        left: 0px;
+    text-align: center;
+}
+
+#user > div:last-of-type > textarea
+{
+    display: inline-block;
+        width: 240px;
+        min-height: 150px;
+}

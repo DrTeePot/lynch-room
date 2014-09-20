@@ -1,0 +1,20 @@
+#player-list
+{
+    position: fixed;
+        top: 50px;
+        left: 0px;
+        z-index: 2;
+    display: block;
+        width: 250px;
+    background-color: darkgrey;
+}
+
+#player-list > div > div > ul > li
+{
+    font-size: 30px;
+    margin: 5px 0px 0px 0px;
+    width: inherit;
+}
+
+#player-list, #player-list > div, #player-list > div > div, #player-list > div > div > ul
+{ background-color: lightgrey; width: 250px; }
