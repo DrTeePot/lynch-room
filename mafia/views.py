@@ -19,7 +19,9 @@ def add_room(request):
 
 
 def enter_room(request):
-    return HttpResponse("not implemented")
+    return render(request,
+                  'gameroom.html',
+                  {})
 
 
 # messaging
@@ -33,6 +35,7 @@ def send_message(request):
     :return:
     """
     pass
+
 
 def check_data(request):
     """
