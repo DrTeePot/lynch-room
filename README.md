@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Lynch Room
+=======
+lynch-room
+>>>>>>> master
 ============
 
 My teams Hack the North project. This is a digital creation of the mafia game we play with our friends, which has mass forum appeal as mafia-scum.
