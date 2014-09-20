@@ -60,9 +60,19 @@ WSGI_APPLICATION = 'lynch_room.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config() 
-}
+if dj_database_url.config():
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'OPTIONS': {
+                'read_default_file': '/path/to/my.cnf',
+            },
+        }
+    }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -85,5 +95,5 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-				    os.path.join(BASE_DIR, 'static'),
-					)
+    os.path.join(BASE_DIR, 'static'),
+)

@@ -1,12 +1,14 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
+import infosite
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'lynch_room.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+
+    url(r'^$', include('infosite.urls'), name='index'),
+    url(r'^play/', include('mafia.urls'), name='mafia'),
 
     url(r'^admin/', include(admin.site.urls)),
 )
