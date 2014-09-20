@@ -12,3 +12,11 @@ def home(request):
     :return:
     """
     return HttpResponse("HOME")
+
+
+def create_user(request):
+    pass
+
+
+def login(request):
+    pass
