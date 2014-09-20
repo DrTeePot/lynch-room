@@ -1,0 +1,13 @@
+.thought
+{
+    display: inline-block;
+        width: 230px;
+    padding: 5px 5px 5px 5px;
+    margin: 2.5px 5px 2.5px 5px;
+    border: 1px solid black;
+}
+
+.thought > span
+{
+    font-weight: bold;
+}
