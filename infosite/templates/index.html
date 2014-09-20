@@ -7,7 +7,7 @@
     <title>Lynch Rooms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Styles -->
-    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="{}" type="text/css" />
         <!-- Pure -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
@@ -17,44 +17,61 @@
 <!-- Navigation Bar -->
 <div id="nav-bar">
     <span>Lynch Rooms</span>
-    <a class="pure-button" href="../login">Logout</a>
+    <!-- If not logged in -->
+    <a class="pure-button" href="../login">Login</a>
+    <!-- If logged in -->
+    <a class="pure-button" href="../logout">Logout</a>
 </div>
 
-<!-- Add a room -->
-<div id="room-addition">
-    <!-- Create a Room -->
-    <form class="pure-form">
-        <table class="pure-table-horizontal">
-            <thead>
-                <tr><th>Create a Room</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>
-                    <label for="game-name">Game Name</label>
-                    <input id="game-name" type="text" placeholder="Game Name" />
-                </td></tr>
-                <tr><td>
-                    <label for="game-secrecy">Secrecy</label>
-                    <select id="game-secrecy">
-                        <option selected="selected">Public</option>
-                        <option>Invite Only</option>
-                        <option>Admin Approved</option>
-                    </select>
-                </td></tr>
-                <tr><td>
-                    <label for="game-rules">Rules</label>
-                    <textarea></textarea>
-                </td></tr>
-            </tbody>
-        </table>
-    </form>
-    <!-- Join a Room -->
+<div class="pure-g">
+    <!-- Room Selection -->
+    <div class="pure-u-1-2">
+        <!-- Add a room -->
+        <div id="room-addition">
+            <!-- Create a Room -->
+            <form class="pure-form">
+                <table class="pure-table-horizontal">
+                    <thead>
+                        <tr><th>Create a Room</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>
+                            <label for="game-name">Game Name</label>
+                            <input id="game-name" type="text" placeholder="Game Name" />
+                        </td></tr>
+                        <tr><td>
+                            <label for="game-secrecy">Secrecy</label>
+                            <select id="game-secrecy">
+                                <option selected="selected">Public</option>
+                                <option>Invite Only</option>
+                                <option>Admin Approved</option>
+                            </select>
+                        </td></tr>
+                        <tr><td>
+                            <label for="game-rules">Rules</label>
+                            <textarea></textarea>
+                        </td></tr>
+                        <tr><td>
+                            <label for="admins">Admins</label>
+                            <input placeholder="Admins" id="admins" type="text" />
+                        </td></tr>
+                        <tr><td>
+                            <button type="submit" class="pure-button pure-button-primary">Create Game</button>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </form>
+            <!-- Join a Room -->
+            <form class="pure-form">
+
+            </form>
+        </div>
+    </div>
+    <!-- Info -->
+    <div class="pure-u-1-2">
+        <p>Lynch Rooms is an ............... something to do wth Mafia.......  Need to remake this paragraph at some point.</p>
+    </div>
 </div>
 
-<!-- Room Selection -->
-<div id="room-selection">
-    <!-- REQUIRES SERVER SIDE STUFF -->
-</div>
- 
 </body>
 </html>
