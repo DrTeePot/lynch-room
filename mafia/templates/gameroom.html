@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <title>Lynch Rooms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Styles -->
-    <link rel="stylesheet" href="../static/css/tabs.css" type="text/css" />
+    <link rel="stylesheet" href="{% static '' %}" type="text/css" />
     <link rel="stylesheet" href="../static/css/players.css" type="text/css" />
     <link rel="stylesheet" href="../static/css/details.css" type="text/css" />
     <link rel="stylesheet" href="../static/css/chat.css" type="text/css" />
@@ -26,8 +27,8 @@
 <body onload="initAll()">
 
 <div class="pure-g" id="tab-bar">
-    <div class="pure-u-1-6">
-        <button class="pure-button">Vote Stats</button>
+    <div class="pure-u-1-6" id="vote-counts">
+        Night Time || L = X, E = Y
     </div>
     <div class="pure-u-1-6">
         <button class="pure-button">Stories</button>
@@ -50,7 +51,16 @@
     <div class="pure-u-1-6">
         <div>
             <!-- Lists Players -->
-            <button onclick="showSlideout()">Show Slideout</button>
+            <div class="player">
+                <span>Adam</span>
+                <span>L = 0</span>
+                <span>E = &infin;</span>
+            </div>
+            <div class="player">
+                <span>Tristan</span>
+                <span>L = &infin;</span>
+                <span>E = 0</span>
+            </div>
         </div>
     </div>
 </div>
