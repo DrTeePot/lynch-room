@@ -26,8 +26,8 @@
 <body onload="initAll()">
 
 <div class="pure-g" id="tab-bar">
-    <div class="pure-u-1-6">
-        <button class="pure-button">Vote Stats</button>
+    <div class="pure-u-1-6" id="vote-counts">
+        Night Time || L = X, E = Y
     </div>
     <div class="pure-u-1-6">
         <button class="pure-button">Stories</button>
@@ -50,7 +50,16 @@
     <div class="pure-u-1-6">
         <div>
             <!-- Lists Players -->
-            <button onclick="showSlideout()">Show Slideout</button>
+            <div class="player">
+                <span>Adam</span>
+                <span>L = 0</span>
+                <span>E = &infin;</span>
+            </div>
+            <div class="player">
+                <span>Tristan</span>
+                <span>L = &infin;</span>
+                <span>E = 0</span>
+            </div>
         </div>
     </div>
 </div>
