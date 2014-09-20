@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 
 # Create your views here.
-def home():
+def home(request):
     """
     This needs to check whether user is logged in.
     If logged in, display info on current games.
