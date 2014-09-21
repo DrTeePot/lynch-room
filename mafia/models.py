@@ -21,9 +21,15 @@ class Player(models.Model):
 
     role = models.ForeignKey('Role')
 
+    # cancelled votes are stored as a list of player names
     lynch_votes = models.ManyToManyField('self', blank=True, null=True)
+    cancelled_lynches = models.TextField(blank=True, default="", editable=False)
+
     election1_votes = models.ManyToManyField('self', blank=True, null=True)
+    cancelled_election1 = models.TextField(blank=True, default="", editable=False)
+
     election2_votes = models.ManyToManyField('self', blank=True, null=True)
+    cancelled_election2 = models.TextField(blank=True, default="", editable=False)
 
 
 class Rules(models.Model):
@@ -36,7 +42,16 @@ class Rules(models.Model):
     day_length = timedelta.fields.TimedeltaField()
     night_length = timedelta.fields.TimedeltaField()
 
-    consensus_voting = models.BooleanField(default=False)
+    consensus_voting = models.BooleanField(default=False,
+                                           verbose_name="changes the definition of majority to be consensus")
+    lynch_count = models.IntegerField(default=0,
+                                      verbose_name="The number of times someone can vote, 0 representing unlimited")
+    election_count = models.IntegerField(default=0,
+                                         verbose_name="The number of times someone can vote, 0 representing unlimited")
+    consecutive_lynches = models.IntegerField(default=1,
+                                              verbose_name="The number of lynch votes before cancelled votes")
+    consecutive_elects = models.IntegerField(default=1,
+                                             verbose_name="The number of election votes before cancelled votes")
 
 
 class Role(models.Model):
@@ -63,8 +78,9 @@ class Role(models.Model):
     num_players = models.IntegerField(verbose_name="The number of people who will hold this role. "
                                                    "Only used if use_percent is false", default=0)
 
-    auto_chatroom = models.BooleanField(verbose_name="Whether the people in this role should have a dedicated chat room",
-                                        default=False)
+    auto_chatroom = models.BooleanField(
+        verbose_name="Whether the people in this role should have a dedicated chat room",
+        default=False)
     chatroom_name = models.CharField(verbose_name="The name of the auto chatroom if enabled", max_length=32)
 
 
