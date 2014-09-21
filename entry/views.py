@@ -2,6 +2,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from entry.forms import UserForm, UserProfileForm
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def home(request):
@@ -106,3 +109,9 @@ def user_login(request):
         return render(request,
                       'entry/login.html',
                       {})
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/rango/')
