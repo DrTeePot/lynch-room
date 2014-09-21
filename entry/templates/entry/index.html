@@ -1,6 +1,10 @@
 {% extends 'entry/base.html' %}
 {% load static %}
 
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'entry/css/login.css' %}" type="text/css"/>
+{% endblock styles %}
+
 {% block main %}
 <img src="http://placekitten.com/1000/1000"/>
 {% endblock main %}
