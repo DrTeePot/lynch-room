@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <title>Lynch Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'css/tabs.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/players.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/details.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/user.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/thoughts.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}" type="text/css" />
+        <!-- Pure -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
+    <!-- Scripts -->
+    <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/players.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/details.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/user.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</head>
+<body onload="initAll()">
+
+<div class="pure-g" id="tab-bar">
+    <div class="pure-u-1-6" id="vote-counts">
+        <span>
+            Night || Your Votes:
+            <br />L = x, E = y
+        </span>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Stories</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Townhall</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Mafia</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Masons</button>
+    </div>
+    <div class="pure-u-1-6">
+        <button class="pure-button">Log Out</button>
+    </div>
+</div>
+
+<div id="player-list">
+    <div>
+        <!-- Lists Players -->
+        <div onclick="showDetails(0)" class="player">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <span>L = n</span>
+            <span>E = n</span>
+        </div>
+    </div>
+</div>
+
+<div id="person-slideout">
+    <!-- User Selected-->
+    <div>
+        <img src="" alt="" title="" />
+        <span>Username</span>
+    </div>
+    <div id="votes">
+        <button class="pure-button" style="float: right; ">Elect</button>
+        <button class="pure-button" style="float: left; ">Lynch</button>
+        <span>Votes</span>
+        <!-- Display all lynch votes, and election votes against / for this person -->
+        <div class="vote lynch-vote">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <span>Time</span>
+        </div>
+    </div>
+    <div id="them-thoughts">
+        <!-- Display people's public thoughts about this person. -->
+        <div class="thought">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <p>Super-d-duper sketchy</p>
+        </div>
+        <!-- Allow user to submit thoughts-->
+        <form class="pure-form">
+            <input type="text" />
+            <button class="pure-button pure-primary-button">Send</button>
+        </form>
+    </div>
+    <div id="pm-chat">
+        <!-- PM this person -->
+        <p>Message chats</p>
+        <form class="pure-form">
+            <input type="text" />
+            <button class="pure-button pure-primary-button">Send</button>
+        </form>
+    </div>
+</div>
+
+<div id="user">
+    <div id="role">
+        <span>Your Role</span>
+        <span>-Role-</span>
+        <!-- Section explaining your role this round -->
+    </div>
+    <div id="you-thoughts">
+        <!-- People's public thoughts about the user -->
+        <span>People's Thoughts on You</span>
+        <div class="thought">
+            <span>Evy</span>
+            <p>Uber sketchy</p>
+        </div>
+        <div class="thought">
+            <span>Keegan</span>
+            <p>Super sketchy</p>
+        </div>
+    </div>
+    <div id="private-thoughts">
+        <!-- User's private thoughts -->
+        <span>Scratch Pad</span>
+        <textarea></textarea>
+    </div>
+</div>
+
+<div id="chats">
+    <!-- Displays the chats from the game. -->
+    <div class="chat">
+        <img src="" alt="" title="" />
+        <span>Username</span>
+        <span>Time</span>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</div>
+
+</body>
+</html>

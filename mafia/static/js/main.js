@@ -3,6 +3,7 @@ function resizeAll()
     resizePlayerList();
     resizeUser();
     resizeSlideout();
+    resizeChat();
 }
 
 function initAll()
