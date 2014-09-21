@@ -8,6 +8,6 @@ urlpatterns = patterns('',
                        url(r'send_message', 'mafia.views.send_message', name='send_message'),
                        url(r'get_messages', 'mafia.views.get_messages', name='retrieve_messages'),
                        url(r'game', 'mafia.views.enter_room', name='game_room'),
-                       url(r'game/vote', '', name='vote')
+                       url(r'game/vote', 'mafia.views.vote', name='vote')
 )
 
