@@ -6,15 +6,45 @@
         z-index: 2;
     display: block;
         width: 250px;
-    background-color: darkgrey;
+    background-color: lightgrey;
 }
 
-#player-list > div > div > ul > li
+#player-list > div
 {
-    font-size: 30px;
-    margin: 5px 0px 0px 0px;
-    width: inherit;
+    display: block;
+        width: 100%;
+        height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-#player-list, #player-list > div, #player-list > div > div, #player-list > div > div > ul
-{ background-color: lightgrey; width: 250px; }
+.player
+{
+    display: block;
+        width: 250px;
+        height: 55px;
+    border: 0px solid black;
+        border-bottom-width: 1px;
+}
+
+.player > img
+{
+    float: left;
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+}
+
+.player > span:first-of-type
+{
+    display: block;
+    margin: 2px 0px 5px 2px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.player > span:nth-of-type(2),.player > span:last-of-type
+{
+    font-size: 18px;
+    margin: 0px 20px 0px 30px;
+}
