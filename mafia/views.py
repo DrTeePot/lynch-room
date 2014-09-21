@@ -8,7 +8,12 @@ from mafia.forms import RoomForm, RulesForm, RoleForm, StoryForm, MessageForm
 # rooms
 
 def lobby(request):
-    return HttpResponse("HOME")
+    # TODO messaging framework
+    return render(request,
+                  'mafia/lobby.html',
+        {
+            #TODO List of games user is in
+        })
 
 
 def create_room(request):

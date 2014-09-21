@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <title>Lynch Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'entry/css/main.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'entry/css/login.css' %}" type="text/css" />
+        <!-- Pure -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div id="nav-bar">
+    <span>Lynch Rooms</span>
+    <!-- If not logged in -->
+    <a class="pure-button" href="../login">Login</a>
+    <!-- If logged in -->
+    <a class="pure-button" href="../logout">Logout</a>
+</div>
+
+<div class="pure-g">
+    <div class="pure-u-1-9"></div>
+    <!-- Room Selection -->
+    <div class="pure-u-1-3">
+        <!-- Add a room -->
+        <div id="room-addition">
+            <!-- Create a Room -->
+            <form class="pure-form">
+                <table class="pure-table-horizontal">
+                    <thead>
+                        <tr><th>Create a Room</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>
+                            <label for="game-name">Game Name</label>
+                            <input id="game-name" type="text" placeholder="Game Name" />
+                        </td></tr>
+                        <tr><td>
+                            <label for="game-secrecy">Secrecy</label>
+                            <select id="game-secrecy">
+                                <option selected="selected">Public</option>
+                                <option>Invite Only</option>
+                                <option>Admin Approved</option>
+                            </select>
+                        </td></tr>
+                        <tr><td>
+                            <label for="game-rules">Rules</label>
+                            <textarea></textarea>
+                        </td></tr>
+                        <tr><td>
+                            <label for="admins">Admins</label>
+                            <input placeholder="Admins" id="admins" type="text" />
+                        </td></tr>
+                        <tr><td>
+                            <button type="submit" class="pure-button pure-button-primary">Create Game</button>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </form>
+            <!-- Join a Room -->
+            <form class="pure-form">
+                <table class="pure-table-horizontal">
+                    <thead>
+                        <tr><th>Join a Room</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>
+                            <label for="room-name">Room ID</label>
+                            <input type="text" placeholder="Room Name" id="room-name" />
+                        </td></tr>
+                        <tr><td>
+                            <label for="room-invite">Invite Code</label>
+                            <input type="text" placeholder="Room Name" id="room-invite" />
+                        </td></tr>
+                        <tr><td>
+                            <button type="submit" class="pure-button pure-button-primary">Create Game</button>
+                        </td></tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div class="pure-u-1-9"></div>
+    <!-- Info -->
+    <div class="pure-u-1-3">
+        <p>Lynch Rooms is an ............... something to do wth Mafia.......  Need to remake this paragraph at some point.</p>
+    </div>
+    <div class="pure-u-1-9"></div>
+</div>
+
+</body>
+</html>

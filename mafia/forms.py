@@ -7,7 +7,7 @@ class RoomForm(forms.ModelForm):
 
     class Meta:
         model = Room
-        exclude = ['next_day', 'next_night']
+        exclude = ['owner', 'next_day', 'next_night']
 
 
 class RulesForm(forms.ModelForm):
