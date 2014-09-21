@@ -1,6 +1,10 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render
 from entry.forms import UserForm, UserProfileForm
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def home(request):
@@ -73,5 +77,41 @@ def register(request):
                   {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 
-def login(request):
-    pass
+def user_login(request):
+    # try to pull out the  information.
+    if request.method == 'POST':
+
+        username = request.POST['username']
+        password = request.POST['password']
+
+        # a User object is returned if it is a valid user
+        user = authenticate(username=username, password=password)
+
+        # If we have a User object, the details are correct.
+        # If None (Python's way of representing the absence of a value), no user
+        if user:
+            #  could have been disabled.
+            if user.is_active:
+                # If the account is valid and active, we can log the user in.
+                login(request, user)
+                # send user to home
+                return HttpResponseRedirect('/play/')
+            else:
+                # An inactive account was used
+                return HttpResponse("Your account is disabled.") # TODO make a page for this
+        else:
+            # Bad login details were provided
+            print "Invalid login details: {0}, {1}".format(username, password)
+            return HttpResponse("Invalid login details supplied.")
+
+    # The request is not a HTTP POST, so display the login form.
+    else:
+        return render(request,
+                      'entry/login.html',
+                      {})
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/rango/')

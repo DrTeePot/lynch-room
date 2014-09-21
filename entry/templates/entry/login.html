@@ -28,25 +28,27 @@
 <div class="pure-g" id="account-form">
     <div class="pure-u-1-4"></div>
     <div class="pure-u-1-2">
-    <form class="pure-form pure-form-aligned" onsubmit="verifyFields()">
+    <form class="pure-form pure-form-aligned" id="login_form" method="post" action="{% url 'login' %}" onsubmit="verifyFields()">
+        {% csrf_token %}
         <fieldset>
             <legend>Login</legend>
 
             <div class="pure-control-group">
-                <label for="user-id">User Name</label>
-                <input id="user-id" type="text" placeholder="User Name" />
+                <label for="user-id">Username</label>
+                <input id="user-id" type="text" name="username" value="" size="50"/>
             </div>
 
             <div class="pure-control-group">
                 <label for="password">Password</label>
-                <input id="password" type="password" placeholder="Password" />
+                <input id="password" type="password" name="password" value="" size="50" />
             </div>
 
             <label for="remember" class="pure-checkbox">
+{#                TODO Implement this? #}
                 <input id="remember" type="checkbox"> Remember me
             </label>
 
-            <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+            <input type="submit" value="Sign in" class="pure-button pure-button-primary" />
         </fieldset>
     </form>
     </div>
