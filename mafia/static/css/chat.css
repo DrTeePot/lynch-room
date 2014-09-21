@@ -1,0 +1,31 @@
+#chats
+{
+    position: absolute;
+        top: 55px;
+        left: 250px;
+    display: block;
+    text-align: center;
+}
+
+.chat
+{
+    display: inline-block;
+        width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 15pt;
+}
+
+.chat > img
+{
+    float: left;
+    height: 50px;
+}
+
+.chat > span:first-of-type
+{
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+}
