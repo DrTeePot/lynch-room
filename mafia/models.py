@@ -8,6 +8,13 @@ class Room(models.Model):
     owner = models.ForeignKey(UserProfile, related_name='owned_rooms')
     admins = models.ManyToManyField(UserProfile, related_name='rooms_admin')
     players = models.ManyToManyField(UserProfile, related_name='rooms_joined')
+    security = models.IntegerField(choices=(
+        (0, "Public"),
+        (1, "Password"),
+        (2, "Invite Only")
+    ), default=0)
+    password = models.CharField(verbose_name="Only necessary when security is set to password",
+                                max_length=64, blank=True, default="")
 
     rules = models.ForeignKey('Rules')
 

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from mafia.forms import RoomForm, RulesForm, RoleForm, StoryForm, MessageForm
@@ -7,6 +8,7 @@ from mafia.forms import RoomForm, RulesForm, RoleForm, StoryForm, MessageForm
 
 # rooms
 
+@login_required()
 def lobby(request):
     # TODO messaging framework
     return render(request,
@@ -16,6 +18,7 @@ def lobby(request):
         })
 
 
+@login_required()
 def create_room(request):
     # Set to False initially. Code changes value to True when creation succeeds.
     created = False
@@ -47,16 +50,18 @@ def create_room(request):
                   {'room_form': room_form, 'created': created})
 
 
+@login_required()
 def add_room(request):
     return HttpResponse("not implemented")
 
 
+@login_required()
 def enter_room(request):
     return render(request,
                   'gameroom.html',
         {})
 
-
+@login_required()
 def vote(request):
     """
     request should contain an ajax request in JSON form
@@ -68,7 +73,7 @@ def vote(request):
 
 
 # messaging
-
+@login_required()
 def send_message(request):
     """
     client adds a message to the server.
@@ -79,7 +84,7 @@ def send_message(request):
     """
     pass
 
-
+@login_required()
 def check_data(request):
     """
     This allows for the client to check for new/changed data
