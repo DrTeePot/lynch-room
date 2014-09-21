@@ -1,12 +1,13 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from mafia.forms import RoomForm, RulesForm, RoleForm, StoryForm, MessageForm
-
+from mafia.forms import RoomForm, RulesForm, RoleForm, StoryForm, MessageForm, JoinRoomForm
 
 # Create your views here.
 
 # rooms
+from mafia.models import Room
+
 
 @login_required()
 def lobby(request):
@@ -52,7 +53,34 @@ def create_room(request):
 
 @login_required()
 def add_room(request):
-    return HttpResponse("not implemented")
+    # If it's a HTTP POST, we're interested in processing form data.
+    if request.method == 'POST':
+        # Attempt to grab information from the raw form information.
+        room_form = JoinRoomForm(data=request.POST)
+
+        room_name = request.POST['name']
+        room_pass = request.POST['password']
+
+        try:
+            room = Room.objects.get(name=room_name)
+            if room.password == room_pass:
+                room
+        except (Room.DoesNotExist, Room.MultipleObjectsReturned):
+            print "Room ", room_name, "Does not exist"
+            return JsonResponse({'response': 'Room/pass incorrect'})
+
+        else:
+            print room_form.errors
+
+    # Not a HTTP POST, so we render our form using two ModelForm instances.
+    # These forms will be blank, ready for user input.
+    else:
+        room_form = RoomForm()
+
+    # Render the template depending on the context.
+    return render(request,
+                  'mafia/create_room.html',
+                  {'room_form': room_form, 'created': created})
 
 
 @login_required()

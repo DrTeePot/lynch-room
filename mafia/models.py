@@ -1,10 +1,11 @@
 from django.db import models
 from entry.models import UserProfile
 import timedelta
+import datetime.datetime
 
 
 class Room(models.Model):
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, unique=True)
     owner = models.ForeignKey(UserProfile, related_name='owned_rooms')
     admins = models.ManyToManyField(UserProfile, related_name='rooms_admin')
     players = models.ManyToManyField(UserProfile, related_name='rooms_joined')
@@ -20,6 +21,18 @@ class Room(models.Model):
 
     next_day = models.DateTimeField(verbose_name="The next time the day will come", editable=False)
     next_night = models.DateTimeField(verbose_name="The next time the night will come", editable=False)
+
+    def add_user(self, user):
+        self.players.add(user)
+
+    def add_admin(self, user):
+        self.admins.add(user)
+
+    def get_next_day(self):
+        return self.next_day
+
+    def get_next_night(self):
+        return self.next_night
 
 
 class Player(models.Model):

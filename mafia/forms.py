@@ -9,6 +9,10 @@ class RoomForm(forms.ModelForm):
         model = Room
         exclude = ['owner', 'next_day', 'next_night']
 
+class JoinRoomForm(forms.ModelForm):
+    class Meta:
+        model = Room
+        fields = ['name', 'password']
 
 class RulesForm(forms.ModelForm):
     class Meta:
