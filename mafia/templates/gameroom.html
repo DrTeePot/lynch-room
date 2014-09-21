@@ -18,17 +18,20 @@
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
     <!-- Scripts -->
-    <script type="text/javascript" src="{% static 'css/chat.js' %}"></script>
-    <script type="text/javascript" src="{% static 'css/players.js' %}"></script>
-    <script type="text/javascript" src="{% static 'css/details.js' %}"></script>
-    <script type="text/javascript" src="{% static 'css/user.js' %}"></script>
-    <script type="text/javascript" src="{% static 'css/main.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/chat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/players.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/details.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/user.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </head>
 <body onload="initAll()">
 
 <div class="pure-g" id="tab-bar">
     <div class="pure-u-1-6" id="vote-counts">
-        Night Time || L = X, E = Y
+        <span>
+            Night || Your Votes:
+            <br />L = x, E = y
+        </span>
     </div>
     <div class="pure-u-1-6">
         <button class="pure-button">Stories</button>
@@ -51,15 +54,10 @@
     <div class="pure-u-1-6">
         <div>
             <!-- Lists Players -->
-            <div class="player">
-                <span>Adam</span>
-                <span>L = 0</span>
-                <span>E = &infin;</span>
-            </div>
-            <div class="player">
-                <span>Tristan</span>
-                <span>L = &infin;</span>
-                <span>E = 0</span>
+            <div onclick="showDetails(0)">
+                <span>Username</span>
+                <span>L = n</span>
+                <span>E = n</span>
             </div>
         </div>
     </div>
