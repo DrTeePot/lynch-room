@@ -70,13 +70,12 @@ if dj_database_url.config():
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'postgres',                      # Or path to database file if using sqlite3.
-            # The following settings are not used with sqlite3:
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'postgres',
             'USER': 'django',
             'PASSWORD': 'django',
-            'HOST': 'localhost',                      # Empty for localhost through domain sockets or           '127.0.0.1' for localhost through TCP.
-            'PORT': '5432',                      # Set to empty string for default.
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
 
@@ -96,6 +95,9 @@ USE_TZ = True
 LOGIN_URL = '/login/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'

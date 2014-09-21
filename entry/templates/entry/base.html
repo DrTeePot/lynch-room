@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <title>{% block title %}Lynch Room{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Styles -->
+    {% block styles %}
+    {% endblock styles %}
+    <link rel="stylesheet" href="{% static 'entry/css/main.css' %}" type="text/css"/>
+    <!-- Pure -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css"/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css"/>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div id="nav-bar">
+    <span><a href="{% url 'index' %}">Lynch Rooms: {{ user.username }}</a></span>
+    {% if user.is_authenticated %}
+        <a class="pure-button" href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <a class="pure-button" href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <!-- If logged in -->
+    <a class="pure-button" href="{% url 'register' %}">Register</a>
+</div>
+
+{% block main %}
+{% endblock main %}
+
+</body>
+</html>

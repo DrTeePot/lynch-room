@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{% static 'css/tabs.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/players.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/details.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'css/details.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/user.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/thoughts.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}" type="text/css" />
         <!-- Pure -->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css" />
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css" />
@@ -92,8 +92,13 @@
             <button class="pure-button pure-primary-button">Send</button>
         </form>
     </div>
-    <div id="chat">
+    <div id="pm-chat">
         <!-- PM this person -->
+        <p>Message chats</p>
+        <form class="pure-form">
+            <input type="text" />
+            <button class="pure-button pure-primary-button">Send</button>
+        </form>
     </div>
 </div>
 
@@ -124,6 +129,13 @@
 
 <div id="chats">
     <!-- Displays the chats from the game. -->
+    <div class="chat">
+        <img src="" alt="" title="" />
+        <span>Username</span>
+        <span>Time</span>
+        <hr />
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 </div>
 
 </body>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <title>Lynch Rooms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'entry/css/main.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'entry/css/creation.css' %}" type="text/css"/>
+    <!-- Pure -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css"/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css"/>
+    <!-- Scripts -->
+</head>
+<body>
+
+<!-- Nav Bar -->
+<div id="nav-bar">
+    <span>Lynch Rooms</span>
+    <a class="pure-button" href="../info">Home</a>
+    <a class="pure-button" href="../Login">Login</a>
+</div>
+
+<!-- Create a room form -->
+<div class="pure-g" id="account-form">
+    <div class="pure-u-1-4"></div>
+{#    TODO make this ajax with jquery#}
+    <div class="pure-u-1-4">
+
+        <form class="pure-form pure-form-aligned" id="room_form" method="post" action="{% url 'create_room' %}"
+              enctype="multipart/form-data">
+            <fieldset>
+                <legend>Create a Room</legend>
+                {% csrf_token %}
+
+                <!-- Display each form. The as_p method wraps each element in a paragraph
+                     (<p>) element. This ensures each element appears on a new line,
+                     making everything look neater. -->
+                {{ room_form.as_p }}
+
+                <!-- Provide a button to click to submit the form. -->
+                <input type="submit" class="pure-button pure-button-primary" name="submit" value="Register"/>
+            </fieldset>
+        </form>
+    </div>
+    <div class="pure-u-1-4">
+
+        <form class="pure-form pure-form-aligned" id="rule_form" method="post" action="{% url 'create_rule' %}"
+              enctype="multipart/form-data">
+            <fieldset>
+                <legend>Create a Rule</legend>
+                {% csrf_token %}
+
+                <!-- Display each form. The as_p method wraps each element in a paragraph
+                     (<p>) element. This ensures each element appears on a new line,
+                     making everything look neater. -->
+                {{ rule_form.as_p }}
+
+                <!-- Provide a button to click to submit the form. -->
+                <input type="submit" class="pure-button pure-button-primary" name="submit" value="Register"/>
+            </fieldset>
+        </form>
+    </div>
+    <div class="pure-u-1-4"></div>
+</div>
+
+</body>
+</html>

@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-
+{% extends 'entry/base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <!-- Meta -->
-    <meta charset="utf-8"/>
-    <title>Lynch Rooms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- Styles -->
-    <link rel="stylesheet" href="{% static 'entry/css/main.css' %}" type="text/css"/>
+
+{% block styles %}
     <link rel="stylesheet" href="{% static 'entry/css/creation.css' %}" type="text/css"/>
-    <!-- Pure -->
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css" type="text/css"/>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css" type="text/css"/>
-    <!-- Scripts -->
-</head>
-<body>
+{% endblock styles %}
 
-<!-- Nav Bar -->
-<div id="nav-bar">
-    <span>Lynch Rooms</span>
-    <a class="pure-button" href="../">Home</a>
-    <a class="pure-button" href="../login">Login</a>
-</div>
-
+{% block main %}
 <!-- Create an account form -->
 <div class="pure-g" id="account-form">
     <div class="pure-u-1-4"></div>
@@ -69,5 +51,4 @@
     <div class="pure-u-1-8"></div>
 </div>
 
-</body>
-</html>
+{% endblock main %}
