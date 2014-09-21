@@ -19,8 +19,13 @@ function showSlideout()
 function showDetails(n)
 {
     if (document.getElementById("person-slideout").style.left.toLowerCase() == "0px")
-        { document.getElementById("person-slideout").style.left = String(document.getElementById("player-list").offsetWidth) + "px"; }
-    
+    {
+        document.getElementById("person-slideout").style.left = String(document.getElementById("player-list").offsetWidth) + "px";
+    }
+    else
+    {
+        document.getElementById("person-slideout").style.left = "0px";
+    }
     // Get votes
     // Get thoughts
     // Get PM

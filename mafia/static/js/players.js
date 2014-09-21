@@ -1,8 +1,5 @@
-var players = [];
-
 function initPlayerList()
 {
-    // Test
 }
 
 function resizePlayerList()

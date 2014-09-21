@@ -38,6 +38,6 @@
 #user > div:last-of-type > textarea
 {
     display: inline-block;
-        width: 240px;
+        width: 230px;
         min-height: 150px;
 }
