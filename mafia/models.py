@@ -1,7 +1,6 @@
 from django.db import models
 from entry.models import UserProfile
 import timedelta
-import datetime.datetime
 
 
 class Room(models.Model):
@@ -53,6 +52,8 @@ class Player(models.Model):
 
 
 class Rules(models.Model):
+    name = models.CharField(max_length=64)
+
     open_roles = models.IntegerField(choices=(
         (0, "Closed"),
         (1, "Open"),
@@ -72,6 +73,10 @@ class Rules(models.Model):
                                               verbose_name="The number of lynch votes before cancelled votes")
     consecutive_elects = models.IntegerField(default=1,
                                              verbose_name="The number of election votes before cancelled votes")
+
+    # Override the __unicode__() method to return out something meaningful!
+    def __unicode__(self):
+        return self.name
 
 
 class Role(models.Model):
