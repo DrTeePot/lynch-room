@@ -13,18 +13,22 @@ class RoomForm(forms.ModelForm):
 class RulesForm(forms.ModelForm):
     class Meta:
         model = Rules
+        exclude = []
 
 
 class RoleForm(forms.ModelForm):
     class Meta:
         model = Role
+        exclude = []
 
 
 class StoryForm(forms.ModelForm):
     class Meta:
         model = Story
+        exclude = []
 
 
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
+        exclude = []
