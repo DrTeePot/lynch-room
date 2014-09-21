@@ -50,25 +50,47 @@
     </div>
 </div>
 
-<div class="pure-g" id="player-list">
-    <div class="pure-u-1-6">
-        <div>
-            <!-- Lists Players -->
-            <div onclick="showDetails(0)">
-                <span>Username</span>
-                <span>L = n</span>
-                <span>E = n</span>
-            </div>
+<div id="player-list">
+    <div>
+        <!-- Lists Players -->
+        <div onclick="showDetails(0)" class="player">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <span>L = n</span>
+            <span>E = n</span>
         </div>
     </div>
 </div>
 
 <div id="person-slideout">
+    <!-- User Selected-->
+    <div>
+        <img src="" alt="" title="" />
+        <span>Username</span>
+    </div>
     <div id="votes">
+        <button class="pure-button" style="float: right; ">Elect</button>
+        <button class="pure-button" style="float: left; ">Lynch</button>
+        <span>Votes</span>
         <!-- Display all lynch votes, and election votes against / for this person -->
+        <div class="vote lynch-vote">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <span>Time</span>
+        </div>
     </div>
     <div id="them-thoughts">
         <!-- Display people's public thoughts about this person. -->
+        <div class="thought">
+            <img src="" alt="" title="" />
+            <span>Username</span>
+            <p>Super-d-duper sketchy</p>
+        </div>
+        <!-- Allow user to submit thoughts-->
+        <form class="pure-form">
+            <input type="text" />
+            <button class="pure-button pure-primary-button">Send</button>
+        </form>
     </div>
     <div id="chat">
         <!-- PM this person -->

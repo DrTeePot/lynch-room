@@ -3,7 +3,6 @@ var players = [];
 function initPlayerList()
 {
     // Test
-    players[0] = new Player("Adam", 0, Infinity, undefined)
 }
 
 function resizePlayerList()
